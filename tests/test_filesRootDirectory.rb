@@ -17,7 +17,6 @@ class TestDirectoryContents < Test::Unit::TestCase
      "_pins",
      "createMap.topojson",
      "index.html",
-     "readme.md",
      "render.js",
      "tests",
      "vendor"]
