@@ -7,7 +7,5 @@ before_script:
   - pip install --user yamale
 script:
   - yamllint _pins/*
-  - ruby tests/test_filesRootDirectory.rb
-  - ruby tests/test_fileEndingsPins.rb
-  - ruby tests/test_coordinateValidation.rb
+  - ruby -Itest tests/all.rb
   - bundle exec jekyll build
