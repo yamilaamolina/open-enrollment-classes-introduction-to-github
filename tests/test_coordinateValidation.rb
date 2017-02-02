@@ -15,4 +15,12 @@ class TestCoordinateValidation < Test::Unit::TestCase
     end
 
   end
+
+  def test_frontmattervalidation
+      Dir["./_pins/*.json"].each do |path|
+          lines = File.readlines(path)
+          assert_match(/^-+$/, lines[0])
+          assert_match(/^-+$/, lines[-1])
+      end
+  end
 end
