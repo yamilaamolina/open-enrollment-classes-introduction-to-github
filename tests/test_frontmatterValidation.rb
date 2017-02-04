@@ -7,8 +7,8 @@ class TestFrontMatterValidation < Test::Unit::TestCase
         patterns = [
             /^-{3,3}$/,
             /githubHandle:.+/i,
-            /latitude:.+/i,
-            /longitude:.+/i,
+            /(latitude|longitude):.+/i,
+            /(longitude|latitude):.+/i,
             /^-{3,3}$/,
         ]
         Dir['./_pins/*.json'].each do |path|
