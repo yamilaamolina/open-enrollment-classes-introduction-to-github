@@ -4,18 +4,17 @@ require 'yaml'
 class TestFrontMatterValidation < Test::Unit::TestCase
 
     def test_frontmattervalidation
-        patterns = [
-            /^-{3,3}$/,
-            /githubHandle:.+/i,
-            /(latitude|longitude):.+/i,
-            /(longitude|latitude):.+/i,
-            /^-{3,3}$/,
-        ]
         Dir['./_pins/*.json'].each do |path|
+            data = YAML.load_file(path)
+
+            keys = data.keys.map { |k| k.downcase }
+            assert_true(keys.include? "githubhandle")
+            assert_true(keys.include? "latitude")
+            assert_true(keys.include? "longitude")
+
             lines = File.readlines(path)
-            patterns.each_with_index do |pattern, index|
-                assert_match(pattern, lines[index])
-            end
+            assert_equal("---\n", lines[0])
+            assert_true(lines[4..-1].include? "---\n")
         end
     end
 
