@@ -13,8 +13,9 @@ class TestFrontMatterValidation < Test::Unit::TestCase
             assert_true(keys.include? "longitude")
 
             lines = File.readlines(path)
-            assert_equal("---\n", lines[0])
-            assert_true(lines[4..-1].include? "---\n")
+            assert_equal("---\n", lines[0], "The broken ")
+            puts lines[1]
+            assert_true(lines[4..-1].include? "---\n", "The YAML front matter has some syntax errors.")
         end
     end
 
