@@ -15,4 +15,5 @@ class TestCoordinateValidation < Test::Unit::TestCase
     end
 
   end
+
 end
