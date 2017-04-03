@@ -18,6 +18,7 @@ class TestDirectoryContents < Test::Unit::TestCase
      "createMap.topojson",
      "images",
      "index.html",
+     "mapsAPI.js",
      "render.js",
      "tests",
      "vendor"]
