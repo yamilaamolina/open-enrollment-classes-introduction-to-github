@@ -16,6 +16,7 @@ class TestDirectoryContents < Test::Unit::TestCase
      "_layouts",
      "_pins",
      "createMap.topojson",
+     "images",
      "index.html",
      "render.js",
      "tests",
