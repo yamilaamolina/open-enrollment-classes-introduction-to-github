@@ -66,7 +66,7 @@ window.eqfeed_callback = function(data) {
     });
 
   new MarkerClusterer(map, markers, {
-    imagePath: './images/cluster/m',
+    imagePath: '../images/cluster/m',
     averageCenter: true,
     minimumClusterSize: 42,
   });
