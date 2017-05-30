@@ -1,0 +1,1 @@
+:: stop CCS servicessc stop ESMManagerping 1.1.1.1 -n 1 -w 30000 <nulsc stop Symantec.DataProcessing.Serviceping 1.1.1.1 -n 1 -w 30000 <nulsc stop AppserverServiceping 1.1.1.1 -n 1 -w 120000 <nulsc stop DirectorySupportServiceping 1.1.1.1 -n 1 -w 15000 <nul
