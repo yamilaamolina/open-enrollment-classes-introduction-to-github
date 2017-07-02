@@ -1,7 +1,0 @@
----
-githubHandle: imarnr
-Your Latitude: 39.6237
-Your Longitude: -104.8738
----
-
-
