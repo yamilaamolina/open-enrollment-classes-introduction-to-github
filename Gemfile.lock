@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     colorator (1.1.0)
     ffi (1.9.10)
@@ -40,4 +40,4 @@ DEPENDENCIES
   jekyll
 
 BUNDLED WITH
-   1.12.5
+   1.14.6
