@@ -1,0 +1,14 @@
+.github/*             @github/training-team
+_layouts/*            @github/training-team
+images/*              @github/training-team
+tests/*               @github/training-team
+.gitignore            @github/training-team
+.travis.yml           @github/training-team
+.yamllint             @github/training-team
+Gemfile               @github/training-team
+Gemfile.lock          @github/training-team
+_config.yml           @github/training-team
+createMap.topojson    @github/training-team
+index.html            @github/training-team
+mapsAPI.js            @github/training-team
+render.js             @github/training-team
