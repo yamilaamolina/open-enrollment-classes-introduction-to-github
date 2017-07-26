@@ -2,6 +2,7 @@
 .github/*           @githubschool/training-team
 tests/*             @githubschool/training-team
 _layouts/*          @githubschool/training-team
+images/*            @githubschool/training-team
 
 # protected files requiring code owner review when changed
 .gitignore          @githubschool/training-team
