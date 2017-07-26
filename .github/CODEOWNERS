@@ -1,14 +1,16 @@
-.github/*             @github/training-team
-_layouts/*            @github/training-team
-images/*              @github/training-team
-tests/*               @github/training-team
-.gitignore            @github/training-team
-.travis.yml           @github/training-team
-.yamllint             @github/training-team
-Gemfile               @github/training-team
-Gemfile.lock          @github/training-team
-_config.yml           @github/training-team
-createMap.topojson    @github/training-team
-index.html            @github/training-team
-mapsAPI.js            @github/training-team
-render.js             @github/training-team
+# protected folders requiring code owner review when changed
+.github/*           @githubschool/training-team
+tests/*             @githubschool/training-team
+_layouts/*          @githubschool/training-team
+
+# protected files requiring code owner review when changed
+.gitignore          @githubschool/training-team
+.travis.yml         @githubschool/training-team
+.yamllint           @githubschool/training-team
+Gemfile             @githubschool/training-team
+Gemfile.lock        @githubschool/training-team
+_config.yml         @githubschool/training-team
+createMap.topojson  @githubschool/training-team
+index.html          @githubschool/training-team
+mapsAPI.js          @githubschool/training-team
+render.js           @githubschool/training-team
