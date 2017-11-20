@@ -9,4 +9,3 @@ script:
   - yamllint _pins/*
   - ruby -Itest tests/all.rb
   - bundle exec jekyll build
-System.out.println("Print");
