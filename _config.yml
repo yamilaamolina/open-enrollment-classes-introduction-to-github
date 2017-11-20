@@ -1,3 +1,5 @@
 collections:
   - pins
-exclude: [vendor]
+exclude:
+  - vendor
+  - backups

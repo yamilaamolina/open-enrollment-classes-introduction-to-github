@@ -15,6 +15,7 @@ class TestDirectoryContents < Test::Unit::TestCase
      "_config.yml",
      "_layouts",
      "_pins",
+     "backups",
      "createMap.topojson",
      "images",
      "index.html",
