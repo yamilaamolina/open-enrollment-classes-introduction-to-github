@@ -15,4 +15,4 @@ checkExtension:
   extension: "json"
   detailsURL: "https://vimeo.com/201011288"
   success: "Your file has the proper extension."
-  failure: "Your file extension is not .yaml. Click details for instructions on how to fix."
+  failure: "Your file extension is not .json. Click details for instructions on how to fix."
