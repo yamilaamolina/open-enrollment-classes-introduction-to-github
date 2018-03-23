@@ -1,6 +1,6 @@
 collections:
   - pins
-  - tons test wax
+  - tons
 exclude:
   - vendor
   - backups
