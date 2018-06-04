@@ -1,5 +1,0 @@
----
-githubHandle: diegofontecilla
-latitude: 51.5142
-longitude: -0.0931
----
