@@ -11,20 +11,65 @@ eqfeed_callback(
 
     {% for pin in site.pins %}
 
+    {% if pin.longitude %}
+    {% capture longitude %}{{ pin.longitude }}{% endcapture %}
+    {% elsif pin.Longitude %}
+    {% capture longitude %}{{ pin.Longitude }}{% endcapture %}
+    {% endif %}
+    {% if pin.latitude %}
+    {% capture latitude %}{{ pin.latitude }}{% endcapture %}
+    {% elsif pin.Latitude %}
+    {% capture Latitude %}{{ pin.Latitude }}{% endcapture %}
+    {% endif %}
+
+    {% assign chars = longitude | split: "" %}
+    {% assign long_is_number = true %}
+    {% assign decimals = 0 %}
+    {% assign i = 0 %}
+
+    {% for char in chars %}
+      {% if i == 0 %}
+        {% unless "-0123456789" contains char %}
+          {% assign long_is_number = false %}
+        {% endunless %}
+      {% elsif "0123456789" contains char %}
+      {% elsif char == "." and decimals == 0 %}
+        {% assign decimals = 1 %}
+      {% else %}
+        {% assign long_is_number = false %}
+      {% endif %}
+      {% assign i = i | plus: 1 %}
+    {% endfor %}
+
+    {% assign chars = latitude | split: "" %}
+    {% assign lat_is_number = true %}
+    {% assign decimals = 0 %}
+    {% assign i = 0 %}
+
+    {% for char in chars %}
+      {% if i == 0 %}
+        {% unless "-0123456789" contains char %}
+          {% assign lat_is_number = false %}
+        {% endunless %}
+      {% elsif "0123456789" contains char %}
+      {% elsif char == "." and decimals == 0 %}
+        {% assign decimals = 1 %}
+      {% else %}
+        {% assign lat_is_number = false %}
+      {% endif %}
+      {% assign i = i | plus: 1 %}
+    {% endfor %}
+
       {
         "type": "Feature",
         "geometry": {
           "type": "Point",
           "coordinates": [
-            {% if pin.longitude %}
-            {{ pin.longitude }},
-            {% elsif pin.Longitude %}
-            {{ pin.Longitude }},
+            {% if long_is_number %}
+            {{ longitude }},
             {% endif %}
-            {% if pin.latitude %}
-            {{ pin.latitude }}
-            {%elsif pin.Latitude %}
-            {{ pin.Latitude }}
+            {% if lat_is_number %}
+            {{ latitude }},
             {% endif %}
             ]
           },
