@@ -52,10 +52,11 @@ window.eqfeed_callback = function(data) {
       var coordinates = coords.geometry.coordinates,
         username = coords.properties.username;
 
-      return new gm.Marker({
+      var marker = new gm.Marker({
         position: new gm.LatLng(coordinates[1], coordinates[0]),
         map: map,
         title: username,
+        url: 'https://github.com/' + username,
         icon: {
           url: 'https://github.com/' + username + '.png?size=20',
           size: mapSize,
@@ -63,6 +64,12 @@ window.eqfeed_callback = function(data) {
           anchor: anchor,
         },
       });
+
+      google.maps.event.addListener(marker, 'click', function() {
+        window.open(this.url, '_blank');
+      });
+
+      return marker;
     });
 
   new MarkerClusterer(map, markers, {
