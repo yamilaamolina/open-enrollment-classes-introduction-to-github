@@ -58,11 +58,16 @@ window.eqfeed_callback = function(data) {
         title: username,
         url: 'https://github.com/' + username,
         icon: {
-          url: 'https://github.com/' + username + '.png?size=20',
+          // https://pixabay.com/en/blank-profile-picture-mystery-man-973460/
+          url: '../images/blank-profile-picture.png',
           size: mapSize,
           scaledSize: scaledSize,
           anchor: anchor,
         },
+        opacity: 0.4,
+        // make sure these markers are on the bottom,
+        // but still let google maps decide markers' zIndex
+        zIndex: coordinates[1] - 200,
       });
 
       google.maps.event.addListener(marker, 'click', function() {
@@ -72,6 +77,33 @@ window.eqfeed_callback = function(data) {
       return marker;
     });
 
+  new MarkerClusterer(map, markers, {
+    imagePath: '../images/blank-cluster/m',
+    averageCenter: true,
+    minimumClusterSize: 42,
+  });
+
+  // Not sure how to tell when the marker's icon is loaded,
+  // so just add a second pin to let Google's utils handle
+  // async loading of the images. (they are faster than new Image().onload...)
+  markers = markers.map(function(marker) {
+    return new gm.Marker({
+      position: marker.position,
+      map: map,
+      title: marker.title,
+      url: marker.url,
+      icon: {
+        url: 'https://github.com/' + marker.title + '.png?size=20',
+        size: mapSize,
+        scaledSize: scaledSize,
+        anchor: anchor,
+      },
+      opacity: 1,
+    });
+  });
+
+  // Just add another cluster to let it handle deferring image loading
+  // till zoom. Use a second cluster to not double up on counting
   new MarkerClusterer(map, markers, {
     imagePath: '../images/cluster/m',
     averageCenter: true,
