@@ -1,0 +1,8 @@
+#include<iostream.h>
+void main()
+{
+cout<<"hello cruel worlddd";
+
+getch();
+
+}
