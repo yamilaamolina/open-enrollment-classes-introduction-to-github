@@ -2,7 +2,7 @@
 void main()
 {
 cout<<"hello cruel worlddd";
-
+cout<<"first edit";
 getch();
 
 }
