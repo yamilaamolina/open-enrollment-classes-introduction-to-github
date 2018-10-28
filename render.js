@@ -1,4 +1,0 @@
----
-layout: renderMap
-showJS: true
----
